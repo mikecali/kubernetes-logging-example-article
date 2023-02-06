@@ -34,7 +34,7 @@ data:
 #Below line is use to isolate the indexes as per different namespaces in K8s.
         logstash_prefix kubernetes-${record['kubernetes']['namespace_name']}
 #Uncomment the below line, if want to isolate the indexes as per different pods in K8s.
-        #logstash_prefix kubernetes-${record['kubernetes']['pod_name']}
+        logstash_prefix kubernetes-${record['kubernetes']['pod_name']}
         host "#{ENV['FLUENT_ELASTICSEARCH_HOST']}"
         port "#{ENV['FLUENT_ELASTICSEARCH_PORT']}"
         scheme "#{ENV['FLUENT_ELASTICSEARCH_SCHEME'] || 'http'}"
